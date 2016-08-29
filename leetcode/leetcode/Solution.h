@@ -30,3 +30,5 @@ struct TreeNode {
 	TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 	
 };
+
+static bool mySortFunction(int i, int j) { return (i<j); }
