@@ -54,7 +54,7 @@ bool isHappy(int n) {
 	archive[n] = true;
 
 	int sSD = sumSquareDigits(n);
-	while (sSD != 0)
+	while (sSD != 1)
 	{
 		if (!archive[sSD])
 		{
