@@ -8,6 +8,9 @@
 #include "237.h"
 #include "169.h"
 #include "206.h"
+#include "225.h"
+#include "290.h"
+
 
 
 
@@ -1605,17 +1608,24 @@ int main()
 	//vector<int> majority = { 2,2,2,3,3 };
 	//majorityElement(majority);
 
-	ListNode* a1 = new ListNode(1);
-	ListNode* a2 = new ListNode(2);
-	ListNode* a3 = new ListNode(3);
-	ListNode* a4 = new ListNode(4);
-	ListNode* a5 = new ListNode(5);
-	a1->next = a2;
-	a2->next = a3;
-	a3->next = a4;
-	a4->next = a5;
+	//ListNode* a1 = new ListNode(1);
+	//ListNode* a2 = new ListNode(2);
+	//ListNode* a3 = new ListNode(3);
+	//ListNode* a4 = new ListNode(4);
+	//ListNode* a5 = new ListNode(5);
+	//a1->next = a2;
+	//a2->next = a3;
+	//a3->next = a4;
+	//a4->next = a5;
 
-	reverseListRec(a1);
+	//reverseListRec(a1);
+
+	//push(1);
+	//push(2);
+	//top();
+	//top();
+
+	wordPattern("abba", "dog cat cat dog");
 
 	return 0;
 }
