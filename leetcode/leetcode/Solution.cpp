@@ -12,6 +12,8 @@
 #include "290.h"
 #include "165.h"
 #include "260.h"
+#include "88.h"
+#include "94.h"
 
 
 
@@ -1631,8 +1633,19 @@ int main()
 
 	//compareVersion("01", "1");
 
-	vector<int> test = { 1,2,1,3,2,5 };
-	singleNumber(test);
+//vector<int> test = { -1, 0, 0, 3, 3, 3, 0, 0, 0 };
+//vector<int> test2 = { 1,2,2 };
+//
+//merge(test, 6, test2, 3);
+
+TreeNode* one = new TreeNode(1);
+TreeNode* two = new TreeNode(2);
+TreeNode* three = new TreeNode(3);
+
+one->right = two;
+two->left = three;
+
+inorderTraversal(one);
 
 	return 0;
 }
