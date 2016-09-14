@@ -29,6 +29,7 @@ sumRange(0, 5) -> -3
 class NumArray {
 public:
 	vector<int> data;
+	map<int, int> archive;
 	NumArray(vector<int> &nums) {
 		for (int i = 0; i < nums.size(); i++)
 		{
@@ -37,20 +38,58 @@ public:
 	}
 
 	int sumRange(int i, int j) {
-		int minEnd;
+		if (i == j)
+			return data[i];
 
-		if (j < data.size() - 1)
-			minEnd = j;
-		else
-			minEnd = data.size() - 1;
-
-		int sum = 0;
-
-		for (int k = i; k <= minEnd; k++)
+		if (i == 0)
 		{
-			sum += data[k];
+			if (archive.count(j))
+				return archive[j];
+			else
+			{
+				int sum = 0;
+				for (int a = 0; a <= j; a++)
+				{
+					sum += data[a];
+				}
+				archive[j] = sum;
+				return sum;
+			}
+		}
+		else
+		{
+			return sumRange(0, j) - sumRange(0, i - 1);
 		}
 
-		return sum;
 	}
 };
+
+
+//class NumArray {
+//public:
+//	vector<int> data;
+//	NumArray(vector<int> &nums) {
+//		for (int i = 0; i < nums.size(); i++)
+//		{
+//			data.push_back(nums[i]);
+//		}
+//	}
+//
+//	int sumRange(int i, int j) {
+//		int minEnd;
+//
+//		if (j < data.size() - 1)
+//			minEnd = j;
+//		else
+//			minEnd = data.size() - 1;
+//
+//		int sum = 0;
+//
+//		for (int k = i; k <= minEnd; k++)
+//		{
+//			sum += data[k];
+//		}
+//
+//		return sum;
+//	}
+//};

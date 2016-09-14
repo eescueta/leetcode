@@ -10,6 +10,8 @@
 #include "206.h"
 #include "225.h"
 #include "290.h"
+#include "165.h"
+#include "260.h"
 
 
 
@@ -1625,7 +1627,12 @@ int main()
 	//top();
 	//top();
 
-	wordPattern("abba", "dog cat cat dog");
+	//wordPattern("abba", "dog cat cat dog");
+
+	//compareVersion("01", "1");
+
+	vector<int> test = { 1,2,1,3,2,5 };
+	singleNumber(test);
 
 	return 0;
 }
