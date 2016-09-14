@@ -46,6 +46,89 @@ Here is an example of version numbers ordering:
 */
 
 int compareVersion(string version1, string version2) {
+	// parse version1
+	vector<string> V1;
+	int i = 0;
+	string currLevel = "";
+	while (i < version1.length())
+	{
+		if (version1[i] == '.')
+		{
+			if (currLevel != "")
+				V1.push_back(currLevel);
+			else
+				V1.push_back("0");
+
+			currLevel = "";
+		}
+		else
+		{
+			currLevel += version1[i];
+		}
+		i++;
+	}
+
+	if (currLevel != "")
+		V1.push_back(currLevel);
+	else
+		V1.push_back("0");
+
+	// parse version2
+	vector<string> V2;
+	i = 0;
+	currLevel = "";
+	while (i < version2.length())
+	{
+		if (version2[i] == '.')
+		{
+			if (currLevel != "")
+				V2.push_back(currLevel);
+			else
+				V2.push_back("0");
+
+			currLevel = "";
+		}
+		else
+		{
+			currLevel += version2[i];
+		}
+		i++;
+	}
+	if (currLevel != "")
+		V2.push_back(currLevel);
+	else
+		V2.push_back("0");
+
+	// compare both version level arrays
+	int compareLength = max(V1.size(), V2.size());
+
+	for (int i = 0; i < compareLength; i++)
+	{
+		int ver1Num;
+		int ver2Num;
+
+		if (i >= V1.size())
+			ver1Num = 0;
+		else
+			ver1Num = stoi(V1[i]);
+		if (i >= V2.size())
+			ver2Num = 0;
+		else
+			ver2Num = stoi(V2[i]);
+
+		if (ver1Num > ver2Num)
+			return 1;
+		else if (ver2Num > ver1Num)
+			return -1;
+	}
+
+	return 0;
+
+
+}
+
+
+int compareVersionWrong(string version1, string version2) {
 	// parse version 1
 	string V1L1 = "";
 	string V1L2 = "";

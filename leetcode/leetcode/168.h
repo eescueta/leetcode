@@ -37,38 +37,6 @@ For example:
 */
 
 
-// Forward declaration of isBadVersion API.
-bool isBadVersion(int version);
+string convertToTitle(int n) {
 
-class Solution {
-public:
-	int firstBadVersionHelper(int start, int end)
-	{
-		if (isBadVersion(start))
-			return start;
-
-		if (start == end)
-			return start;
-
-		int mid = start - 1 + (((end + 1) - (start - 1)) / 2);
-
-		if (start == mid)
-			return firstBadVersionHelper(start + 1, mid);
-
-		if (isBadVersion(mid) && !isBadVersion(mid - 1))
-			return mid;
-		else if (isBadVersion(mid))
-		{
-			return firstBadVersionHelper(start, mid);
-		}
-		else
-		{
-			return firstBadVersionHelper(mid, end);
-		}
-
-	}
-
-	int firstBadVersion(int n) {
-		return firstBadVersionHelper(1, n);
-	}
-};
+}

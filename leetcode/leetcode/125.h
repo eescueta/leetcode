@@ -41,7 +41,7 @@ bool isPalindrome(string s) {
 			L++;
 			continue;
 		}
-		if (!isalpha(s[R]))
+		if (!isalnum(s[R]))
 		{
 			R--;
 			continue;

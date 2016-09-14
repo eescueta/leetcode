@@ -33,7 +33,7 @@ public:
 		if (start == end)
 			return start;
 
-		int mid = ((end+1) - (start-1)) / 2;
+		int mid = start-1 + ( ((end+1) - (start-1)) / 2);
 
 		if (start == mid)
 			return firstBadVersionHelper(start + 1, mid);
