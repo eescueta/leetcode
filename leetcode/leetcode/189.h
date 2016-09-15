@@ -27,6 +27,8 @@ Try to come up as many solutions as you can, there are at least 3 different ways
 11
 [1,2]
 1
+[1,2,3,4,5,6]
+2
 */
 
 
