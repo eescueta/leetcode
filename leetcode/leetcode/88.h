@@ -42,6 +42,10 @@ You may assume that nums1 has enough space (size that is greater or equal to m +
 3
 [1,2,3]
 3
+[-1,0,0,3,3,3,0,0,0]
+6
+[1,2,2]
+3
 */
 
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
