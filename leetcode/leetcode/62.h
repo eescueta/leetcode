@@ -24,6 +24,8 @@ How many possible unique paths are there?
 1
 3
 7
+23
+12
 */
 
 struct coordinates
