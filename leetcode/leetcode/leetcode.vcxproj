@@ -65,17 +65,44 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="100.h" />
+    <ClInclude Include="101.h" />
     <ClInclude Include="104.h" />
+    <ClInclude Include="121.h" />
+    <ClInclude Include="136.h" />
+    <ClInclude Include="141.h" />
+    <ClInclude Include="160.h" />
+    <ClInclude Include="167.h" />
     <ClInclude Include="169.h" />
     <ClInclude Include="171.h" />
+    <ClInclude Include="173.h" />
+    <ClInclude Include="191.h" />
+    <ClInclude Include="198.h" />
+    <ClInclude Include="199.h" />
+    <ClInclude Include="202.h" />
     <ClInclude Include="206.h" />
+    <ClInclude Include="217.h" />
     <ClInclude Include="226.h" />
+    <ClInclude Include="231.h" />
+    <ClInclude Include="235.h" />
     <ClInclude Include="237.h" />
     <ClInclude Include="242.h" />
     <ClInclude Include="258.h" />
+    <ClInclude Include="263.h" />
     <ClInclude Include="283.h" />
+    <ClInclude Include="303.h" />
+    <ClInclude Include="326.h" />
+    <ClInclude Include="342.h" />
+    <ClInclude Include="345.h" />
     <ClInclude Include="349.h" />
+    <ClInclude Include="350.h" />
     <ClInclude Include="383.h" />
+    <ClInclude Include="387.h" />
+    <ClInclude Include="389.h" />
+    <ClInclude Include="59.h" />
+    <ClInclude Include="66.h" />
+    <ClInclude Include="70.h" />
+    <ClInclude Include="83.h" />
+    <ClInclude Include="RetryThese.h" />
     <ClInclude Include="Solution.h" />
   </ItemGroup>
   <ItemGroup>

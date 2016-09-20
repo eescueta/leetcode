@@ -54,6 +54,87 @@
     <ClInclude Include="206.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="66.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="70.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="83.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="101.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="121.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="136.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="141.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="160.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="167.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="191.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="198.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="202.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="217.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="231.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="235.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="263.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="326.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="342.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="345.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="350.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="387.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="389.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RetryThese.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="303.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="199.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="173.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="59.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution.cpp">
