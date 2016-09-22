@@ -40,7 +40,7 @@ Output:
 
 void combinationSum3Helper(int k, int n, int currentNumber ,vector<int> currentArray, vector<vector<int>>* results)
 {
-	if (currentArray.size() == k && n == 0)
+	if (currentArray.size() == 3 && n == 0)
 	{
 		(*results).push_back(currentArray);
 			return;

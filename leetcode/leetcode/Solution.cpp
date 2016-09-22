@@ -14,9 +14,6 @@
 #include "260.h"
 #include "88.h"
 #include "94.h"
-#include "377.h"
-#include "216.h"
-#include "59.h"
 
 
 
@@ -1641,18 +1638,14 @@ int main()
 //
 //merge(test, 6, test2, 3);
 
-//TreeNode* one = new TreeNode(1);
-//TreeNode* two = new TreeNode(2);
-//TreeNode* three = new TreeNode(3);
-//
-//one->right = two;
-//two->left = three;
-//
-//inorderTraversal(one);
+TreeNode* one = new TreeNode(1);
+TreeNode* two = new TreeNode(2);
+TreeNode* three = new TreeNode(3);
 
-//combinationSum3(3, 7);
+one->right = two;
+two->left = three;
 
-generateMatrix(4);
+inorderTraversal(one);
 
 	return 0;
 }

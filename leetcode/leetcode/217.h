@@ -35,7 +35,6 @@ bool containsDuplicate(vector<int>& nums) {
 			return true;
 	}
 
-
 	// no duplicates
 	return false;
 }
