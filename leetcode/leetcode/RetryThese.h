@@ -11,7 +11,7 @@ Done:
 165. Compare Version Numbers
 189. Rotate Array
 238. Product of Array Except Self
-
+1. Two Sum
 
 
 Retry:
@@ -21,5 +21,6 @@ Retry:
 319. Bulb Switcher
 318. Maximum Product of Word Lengths
 96. Unique Binary Search Trees
+77. Combinations
 
 */
