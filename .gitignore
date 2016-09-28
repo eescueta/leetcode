@@ -49,3 +49,11 @@ leetcode/leetcode.VC.db
 *.opendb
 leetcode/leetcode.VC.db
 leetcode/.vs/leetcode/v14/.suo
+*.pdb
+leetcode/Debug/leetcode.ilk
+*.exe
+leetcode/.vs/leetcode/v14/.suo
+*.pdb
+leetcode/Debug/leetcode.ilk
+*.exe
+*.obj
