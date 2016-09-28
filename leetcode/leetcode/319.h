@@ -45,6 +45,8 @@ int bulbSwitch(int n) {
 		count++;
 		pow = count*count;
 	}
-
-	return count - 1;
+	if (pow == n)
+		return count;
+	else
+		return count - 1;
 }
