@@ -57,3 +57,7 @@ leetcode/.vs/leetcode/v14/.suo
 leetcode/Debug/leetcode.ilk
 *.exe
 *.obj
+*.obj
+*.filters
+*.obj
+leetcode/Debug/leetcode.exe

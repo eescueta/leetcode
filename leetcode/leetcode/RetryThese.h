@@ -14,6 +14,7 @@ Done:
 1. Two Sum
 319. Bulb Switcher
 96. Unique Binary Search Trees
+42. Trapping Rain Water
 
 
 
@@ -24,7 +25,6 @@ Retry:
 357. Count Numbers with Unique Digits
 318. Maximum Product of Word Lengths
 77. Combinations
-42. Trapping Rain Water
 215. Kth Largest Element in an Array
 279. Perfect Squares
 
