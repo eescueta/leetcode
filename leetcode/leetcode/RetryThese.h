@@ -32,5 +32,7 @@ Google:
 295. Find Median from Data Stream
 340. Longest Substring with At Most K Distinct Characters
 139. Word Break
+23. Merge k Sorted Lists
+259. 3Sum Smaller
 
 */
