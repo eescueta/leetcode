@@ -47,6 +47,5 @@ public:
 		if (q.size() == 0)
 			return 0;
 		
-
 	}
 };
