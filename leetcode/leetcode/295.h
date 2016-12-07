@@ -35,17 +35,30 @@ findMedian() -> 2
 class MedianFinder {
 public:
 
-	priority_queue<int> q;
+	priority_queue<int> lower_half;
+	priority_queue<int> upper_half;
 
 	// Adds a number into the data structure.
 	void addNum(int num) {
-		q.push(num);
+		lower_half.push(num);
+		int i = lower_half.top();
+		lower_half.pop();
+		upper_half.push(-i);
+
+		if (upper_half.size() > lower_half.size())
+		{
+			lower_half.push(-upper_half.top());
+			upper_half.pop();
+		}
 	}
 
 	// Returns the median of current data stream
 	double findMedian() {
-		if (q.size() == 0)
-			return 0;
-		
+		if (upper_half.size() == lower_half.size())
+		{
+			return ((double)(-upper_half.top()) + (double)(lower_half.top())) / 2;
+		}
+		else
+			return lower_half.top();
 	}
 };

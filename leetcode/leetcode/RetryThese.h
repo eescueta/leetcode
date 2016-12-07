@@ -17,23 +17,39 @@ Done:
 42. Trapping Rain Water
 279. Perfect Squares
 
+Bloomberg:
+
+
+
 Google:
 42. Trapping Rain Water
+295. Find Median from Data Stream
+259. 3Sum Smaller
+340. Longest Substring with At Most K Distinct Characters
+128. Longest Consecutive Sequence
 
+****************************************************************************************
 
 Retry:
 347. Top K Frequent Elements (use a priority queue)
 172. Factorial Trailing Zeroe
 357. Count Numbers with Unique Digits
-318. Maximum Product of Word Lengths
 77. Combinations
 215. Kth Largest Element in an Array
-
-Google:
-295. Find Median from Data Stream
-340. Longest Substring with At Most K Distinct Characters
 139. Word Break
 23. Merge k Sorted Lists
-259. 3Sum Smaller
+
+Bloomberg:
+138. Copy List with Random Pointer
+
+
+Google:
+318. Maximum Product of Word Lengths
+166. Fraction to Recurring Decimal
+
+
+Should be correct:
+133. Clone Graph
 
 */
+
