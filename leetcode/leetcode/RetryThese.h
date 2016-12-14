@@ -17,9 +17,11 @@ Done:
 42. Trapping Rain Water
 279. Perfect Squares
 
+Amazon:
+
 Bloomberg:
-
-
+ss
+Facebook:
 
 Google:
 42. Trapping Rain Water
@@ -27,6 +29,11 @@ Google:
 259. 3Sum Smaller
 340. Longest Substring with At Most K Distinct Characters
 128. Longest Consecutive Sequence
+
+Microsoft:
+48. Rotate Image
+
+Twitter:
 
 ****************************************************************************************
 
@@ -39,14 +46,26 @@ Retry:
 139. Word Break
 23. Merge k Sorted Lists
 
+236. Lowest Common Ancestor of a Binary Tree
+
+Amazon:
+236. Lowest Common Ancestor of a Binary Tree
+
 Bloomberg:
 138. Copy List with Random Pointer
 
+Facebook:
+236. Lowest Common Ancestor of a Binary Tree
 
 Google:
 318. Maximum Product of Word Lengths
 166. Fraction to Recurring Decimal
 
+Microsoft:
+236. Lowest Common Ancestor of a Binary Tree
+
+Twitter:
+236. Lowest Common Ancestor of a Binary Tree
 
 Should be correct:
 133. Clone Graph

@@ -131,7 +131,7 @@ public:
 		bool colVictory = true;
 		for (int i = 0; i < size && colVictory; i++)
 		{
-			colVictory = (board[col][i] == mark);
+			colVictory = (board[i][col] == mark);
 		}
 
 		// check top left diagonal if necessary
