@@ -45,11 +45,12 @@ Retry:
 215. Kth Largest Element in an Array
 139. Word Break
 23. Merge k Sorted Lists
-
 236. Lowest Common Ancestor of a Binary Tree
+73. Set Matrix Zeroes
 
 Amazon:
 236. Lowest Common Ancestor of a Binary Tree
+73. Set Matrix Zeroes
 
 Bloomberg:
 138. Copy List with Random Pointer
@@ -63,6 +64,7 @@ Google:
 
 Microsoft:
 236. Lowest Common Ancestor of a Binary Tree
+73. Set Matrix Zeroes
 
 Twitter:
 236. Lowest Common Ancestor of a Binary Tree
