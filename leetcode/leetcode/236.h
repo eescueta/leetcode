@@ -26,8 +26,18 @@ For example, the lowest common ancestor (LCA) of nodes 5 and 1 is 3. Another exa
 */
 
 TreeNode* lowestCommonAncestor(TreeNode* root, TreeNode* p, TreeNode* q) {
-	if (!root || root == p || root == q) return root;
-	TreeNode* left = lowestCommonAncestor(root->left, p, q);
-	TreeNode* right = lowestCommonAncestor(root->right, p, q);
-	return !left ? right : !right ? left : root;
+	if (root == p || root == q || root == NULL)
+		return root;
+
+	TreeNode* lcaLeft = lowestCommonAncestor(root->left, p, q);
+	TreeNode* lcaRight = lowestCommonAncestor(root->right, p, q);
+
+	if (lcaLeft != NULL && lcaRight != NULL)
+		return root;
+	else if (lcaLeft == NULL && lcaRight != NULL)
+		return lcaRight;
+	else if (lcaLeft != NULL && lcaRight == NULL)
+		return lcaLeft;
+	else
+		return NULL;
 }

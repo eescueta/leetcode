@@ -16,12 +16,17 @@ Done:
 96. Unique Binary Search Trees
 42. Trapping Rain Water
 279. Perfect Squares
+236. Lowest Common Ancestor of a Binary Tree
+
 
 Amazon:
+236. Lowest Common Ancestor of a Binary Tree
 
 Bloomberg:
 ss
 Facebook:
+236. Lowest Common Ancestor of a Binary Tree
+
 
 Google:
 42. Trapping Rain Water
@@ -32,8 +37,11 @@ Google:
 
 Microsoft:
 48. Rotate Image
+236. Lowest Common Ancestor of a Binary Tree
+
 
 Twitter:
+236. Lowest Common Ancestor of a Binary Tree
 
 ****************************************************************************************
 
@@ -45,29 +53,29 @@ Retry:
 215. Kth Largest Element in an Array
 139. Word Break
 23. Merge k Sorted Lists
-236. Lowest Common Ancestor of a Binary Tree
 73. Set Matrix Zeroes
 
+SQL: 
+178. Rank Scores
+
 Amazon:
-236. Lowest Common Ancestor of a Binary Tree
 73. Set Matrix Zeroes
 
 Bloomberg:
 138. Copy List with Random Pointer
+445. Add Two Numbers II
 
 Facebook:
-236. Lowest Common Ancestor of a Binary Tree
 
 Google:
 318. Maximum Product of Word Lengths
 166. Fraction to Recurring Decimal
 
 Microsoft:
-236. Lowest Common Ancestor of a Binary Tree
 73. Set Matrix Zeroes
+445. Add Two Numbers II
 
 Twitter:
-236. Lowest Common Ancestor of a Binary Tree
 
 Should be correct:
 133. Clone Graph

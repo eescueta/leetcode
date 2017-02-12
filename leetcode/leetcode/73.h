@@ -11,67 +11,90 @@
 using namespace std;
 
 /*
-Given an array with n objects colored red, white or blue, sort them so that objects of the same color are adjacent, with the colors in the order red, white and blue.
+Given a m x n matrix, if an element is 0, set its entire row and column to 0. Do it in place.
 
-Here, we will use the integers 0, 1, and 2 to represent the color red, white, and blue respectively.
-
-Note:
-You are not suppose to use the library's sort function for this problem.
-
-click to show follow up.
 
 Follow up:
-A rather straight forward solution is a two-pass algorithm using counting sort.
-First, iterate the array counting number of 0's, 1's, and 2's, then overwrite array with total number of 0's, then 1's and followed by 2's.
+Did you use extra space?
+A straight forward solution using O(mn) space is probably a bad idea.
+A simple improvement uses O(m + n) space, but still not the best solution.
+Could you devise a constant space solution?
 
-Could you come up with an one-pass algorithm using only constant space?
+Show Company Tags
+Show Tags
+Show Similar Problems
+
 */
 
 
 /*
-[0]
+[[0]]
+[[]]
 []
-[2,1]
-[2,0]
-[1,0]
-[0,1]
-[0,2]
-[0,1,1,1,1,0,0,0,1,1,1]
-[2,1,1,1,2,1,2,1,2]
-[1,2,2,1,2,1,2,1]
-[2,1,2,0,1,2,1,2,1,0,0,0]
+[[0,4,1],[8,5,2],[9,6,0]]
+[[7,4,1],[8,0,2],[9,6,3]]
+[[0,4,1],[8,0,2],[9,6,3]]
+[[7,0,1],[8,5,2],[9,0,3]]
+[[7,4,1],[0,5,0],[9,6,3]]
 */
 
 
-void sortColors(vector<int>& nums) {
-	if (nums.size() <= 1)
-		return;
+void setZeroes(vector<vector<int>>& matrix) {
+	int firstZeroRow = -1;
 
-	int leftPtr = 0;
-	int rightPtr = nums.size() - 1;
-	while (nums[leftPtr] == 0)
-		leftPtr++;
-	while (nums[rightPtr] == 2)
-		rightPtr--;
 
-	for (int i = leftPtr; i <= rightPtr; i++)
+	// find first row with a zero
+	for (int i = 0; i < matrix.size(); i++)
 	{
-		if (nums[i] == 0)
+		bool foundRow = false;
+		for (int k = 0; k < matrix[i].size(); k++)
 		{
-			if (i != leftPtr)
+			if (matrix[i][k] == 0)
 			{
-				nums[i] = nums[leftPtr];
-				nums[leftPtr] = 0;
-				i--;
+				firstZeroRow = i;
+				foundRow = true;
+				break;
 			}
-			leftPtr++;
 		}
-		else if (nums[i] == 2)
+		if (foundRow) break;
+	}
+
+	// no zeroes
+	if (firstZeroRow < 0) return;
+	
+	vector<int> zeroRow(matrix[0].size()); // create a row of all zeros
+
+	// set rows to zero execept for the first zero row
+	for (int i = firstZeroRow + 1; i < matrix.size(); i++)
+	{
+		bool isZeroRow = false;
+		for (int k = 0; k < matrix[i].size(); k++)
 		{
-			nums[i] = nums[rightPtr];
-			nums[rightPtr] = 2;
-			rightPtr--;
-			i--;
+			if (matrix[i][k] == 0)
+			{
+				// set row to zero
+				//matrix[i] = zeroRow;
+				matrix[firstZeroRow][k] = 0; // record zero row for columns
+				isZeroRow = true;
+			}
+		}
+
+		if (isZeroRow)
+			matrix[i] = zeroRow;
+	}
+
+	// set columns to zero using values recorded in the first zero row
+	for (int i = 0; i < matrix[firstZeroRow].size(); i++)
+	{
+		if (matrix[firstZeroRow][i] == 0)
+		{
+			for (int j = 0; j < matrix.size(); j++)
+			{
+				matrix[j][i] = 0;
+			}
 		}
 	}
+
+	// finally, set the first zero row to all zeroes
+	matrix[firstZeroRow] = zeroRow;
 }
