@@ -42,7 +42,77 @@ Output: 7 -> 8 -> 0 -> 7
 [1,2,3]
 */
 
-//alternate solution: USE STACK!!!!!
+int getTopVal(stack<int>& s)
+{
+	if (!s.empty())
+	{
+		int n = s.top();
+		s.pop();
+		return n;
+	}
+	else
+		return 0;
+}
+
+ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+	stack<int> l1Digits;
+	stack<int> l2Digits;
+
+	// get l1 digits
+	ListNode* curr = l1;
+	while (curr != NULL)
+	{
+		l1Digits.push(curr->val);
+		curr = curr->next;
+	}
+
+	// get l2 digits
+	curr = l2;
+	while (curr != NULL)
+	{
+		l2Digits.push(curr->val);
+		curr = curr->next;
+	}
+
+	// construct new list using stacks
+	ListNode* res = NULL;
+	int carry = 0;
+	while (!l1Digits.empty() || !l2Digits.empty())
+	{
+		int x = getTopVal(l1Digits);
+		int y = getTopVal(l2Digits);
+
+		ListNode* newNode = new ListNode(x + y + carry);
+		if (!res)
+		{
+			res = newNode;
+		}
+		else
+		{
+			newNode->next = res;
+			res = newNode;
+		}
+
+		// calculate carry
+		carry = newNode->val / 10;
+		newNode->val = newNode->val % 10;
+	}
+
+	if (carry > 0)
+	{
+		ListNode* newNode = new ListNode(carry);
+		newNode->next = res;
+		res = newNode;
+	}
+
+	return res;
+}
+
+
+
+
+
+
 
 int addTwoNumbers445Helper(ListNode** res, ListNode* l1, ListNode* l2)
 {

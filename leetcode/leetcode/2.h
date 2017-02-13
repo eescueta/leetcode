@@ -33,7 +33,62 @@ Output: 7 -> 0 -> 8
 [5,5]
 */
 
+// cleaner solution
+
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
+	if (!l1) return l2;
+	if (!l2) return l1;
+
+	ListNode* it1 = l1;
+	ListNode* it2 = l2;
+
+	ListNode* res = NULL;
+	ListNode* resTail = NULL;
+
+	int carry = 0;
+
+	while (it1 != NULL || it2 != NULL)
+	{
+		int sumOne = 0;
+		int sumTwo = 0;
+
+		if (it1) sumOne = it1->val;
+		if (it2) sumTwo = it2->val;
+
+		// make new node
+		ListNode* newNode = new ListNode(sumOne + sumTwo + carry);
+
+		if (!res)
+		{
+			res = newNode;
+			resTail = newNode;
+		}
+		else
+		{
+			resTail->next = newNode;
+			resTail = resTail->next;
+		}
+
+		carry = newNode->val / 10;
+		newNode->val = newNode->val % 10;
+
+		if (it1)
+			it1 = it1->next;
+		if (it2)
+			it2 = it2->next;
+	}
+
+	// add a new last node if necessary
+	if (carry > 0)
+	{
+		ListNode* newNode = new ListNode(carry);
+		resTail->next = newNode;
+	}
+
+	return res;
+}
+
+ListNode* addTwoNumbersOld(ListNode* l1, ListNode* l2) {
 	if (!l1) return l2;
 	if (!l2) return l1;
 
