@@ -70,28 +70,28 @@ TreeNode* sortedArrayToBST(vector<int>& nums) {
 
 
 
-
-
-
-TreeNode* sortedArrayToBSTHelper(vector<int>& nums, int start, int end) {
-
-	if (start == end)
-		return NULL;
-
-	int mid = ((end - start) / 2) + start;
-
-	TreeNode* t = new TreeNode(nums[mid]);
-
-	t->left = sortedArrayToBSTHelper(nums, start, mid);
-	t->right = sortedArrayToBSTHelper(nums, mid + 1, end);
-	return t;
-}
-
-TreeNode* sortedArrayToBST(vector<int>& nums) {
-	if (nums.size() == 0)
-		return NULL;
-	else if (nums.size() == 1)
-		return new TreeNode(nums[0]);
-
-	return sortedArrayToBSTHelper(nums, 0, nums.size());
-}
+//
+//
+//
+//TreeNode* sortedArrayToBSTHelper(vector<int>& nums, int start, int end) {
+//
+//	if (start == end)
+//		return NULL;
+//
+//	int mid = ((end - start) / 2) + start;
+//
+//	TreeNode* t = new TreeNode(nums[mid]);
+//
+//	t->left = sortedArrayToBSTHelper(nums, start, mid);
+//	t->right = sortedArrayToBSTHelper(nums, mid + 1, end);
+//	return t;
+//}
+//
+//TreeNode* sortedArrayToBST(vector<int>& nums) {
+//	if (nums.size() == 0)
+//		return NULL;
+//	else if (nums.size() == 1)
+//		return new TreeNode(nums[0]);
+//
+//	return sortedArrayToBSTHelper(nums, 0, nums.size());
+//}
