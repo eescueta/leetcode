@@ -31,6 +31,47 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 786
 */
 
+/*
+0 - 1
+1 - (0) = 1
+2 - (1) + (0) = 2
+
+*/
+
+// f(n) == f(n-1) + f(n-2)
+int climbStairs(int n) {
+	if (n == 0 || n == 1) return 1;
+
+	int fN1 = 1;
+	int fN = 1; // current step
+	int step = 1;
+
+	while (step != n)
+	{
+		//fN = fN + fN1;
+		int newNum = fN + fN1;
+		fN1 = fN;
+		fN = newNum;
+		step++;
+	}
+	return fN;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 int climbStairsHelper(int n, map<int, int> &archive) {
 	if (n == 0)
 		return 1;
@@ -55,7 +96,7 @@ int climbStairsHelper(int n, map<int, int> &archive) {
 	return result;
 }
 
-int climbStairs(int n) {
+int climbStairsOld(int n) {
 	map<int, int> archiveResults;
 	return climbStairsHelper(n, archiveResults);
 }

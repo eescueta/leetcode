@@ -28,6 +28,35 @@ How many possible unique paths are there?
 12
 */
 
+long long factorial(int n, int start)
+{
+	if (n == 0) return 1;
+
+	long long res = 1;
+	int count = start;
+	while (count <= n)
+	{
+		res *= count;
+		count++;
+	}
+	return res;
+}
+
+int uniquePaths(int m, int n) {
+	// n choose k
+	// n is m+n
+	// k is m or n
+	long long denominator = (m > n) ? factorial(n - 1, 1) : factorial(m - 1, 1);
+	long long numerator = (m > n) ? factorial(m + n - 2, m) : factorial(m + n - 2, n);
+
+	return (int)(numerator / denominator);
+}
+
+
+
+
+
+
 struct coordinates
 {
 	int x;
@@ -73,7 +102,7 @@ int uniquePathsHelper(int m, int n, map<coordinates, int>* numPaths)
 
 }
 
-int uniquePaths(int m, int n) {
+int uniquePathsOld(int m, int n) {
 	map<coordinates, int> numPaths;
 
 	// init base case

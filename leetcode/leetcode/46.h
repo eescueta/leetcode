@@ -31,7 +31,35 @@ For example,
 [1,2,3,4]
 */
 
+
 vector<vector<int>> permute(vector<int>& nums) {
+	vector<vector<int>> res = { {} };
+	if (nums.size() == 0) return res;
+
+	res[0].push_back(nums[0]);
+	for (int i = 1; i < nums.size(); i++)
+	{
+		vector<vector<int>> newRes;
+		//iterate through elements
+		for (int j = 0; j < res.size(); j++)
+		{
+			// add next number in each place of current element
+			for (int k = 0; k <= res[j].size(); k++)
+			{
+				vector<int> v = res[j];
+				v.insert(v.begin() + k, nums[i]);
+				newRes.push_back(v);
+			}
+		}
+		res = newRes;
+	}
+
+	return res;
+}
+
+
+
+vector<vector<int>> permuteOld(vector<int>& nums) {
 	vector<vector<int>> results;
 	if (nums.size() <= 1)
 		return{ nums };

@@ -49,6 +49,53 @@ You may assume that nums1 has enough space (size that is greater or equal to m +
 */
 
 void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+	if (m == 0)
+		nums1 = nums2;
+	if (n == 0)
+		return;
+
+	int itAll = m + n - 1;
+	int it1 = m - 1;
+	int it2 = n - 1;
+
+	while (itAll >= 0)
+	{
+		if ( (it1 >= 0) && (it2 < 0 || nums1[it1] > nums2[it2]))
+		{
+			nums1[itAll] = nums1[it1];
+			it1--;
+		}
+		else
+		{
+			nums1[itAll] = nums2[it2];
+			it2--;
+		}
+
+		itAll--;
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void mergeOld(vector<int>& nums1, int m, vector<int>& nums2, int n) {
 	int itOne = m - 1;
 	int itTwo = n - 1;
 	int itAll = m + n - 1;

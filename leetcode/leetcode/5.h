@@ -27,48 +27,71 @@ Output: "bb"
 */
 
 /*
-
+"babad"
+"cbbd"
+"dksjafhdsaljkhfabbaccsdjf"
+"ccc"
 */
 
-void solveTowers(vector<stack<int>>& towers, int size, int src, int dest)
-{
-	if (src < 0 || src > 2 || dest < 0 || dest > 2) return;
+string longestPalindrome(string s) {
+	vector<vector<bool> > isAnagram(s.length(), vector<bool>(s.length(), false));
 
-	if (size == 1)
+	int curMaxLength = 0;
+	string currLongestPalindrome = "";
+
+	// all characters of one length are considered palindromes
+	for (int i = 0; i < isAnagram.size(); i++)
 	{
-		if (towers[dest].size() > 0 && towers[dest].top() < towers[src].top())
-			throw std::invalid_argument("Cannot place bigger number on top of smaller one");
+		isAnagram[i][i] = true;
+		if (curMaxLength < 1)
+		{
+			curMaxLength = 1;
+			currLongestPalindrome = s[i];
+		}
 
-		int i = towers[src].top();
-		towers[src].pop();
-		towers[dest].push(i);
-		return;
+		if (i != isAnagram.size() - 1)
+		{
+			if (s[i] == s[i + 1])
+			{
+				isAnagram[i][i + 1] = true;
+				if (curMaxLength != 2)
+				{
+					curMaxLength = 2;
+					currLongestPalindrome = s.substr(i, 2);
+				}
+			}
+		}
 	}
 
-	//get other tower
-	int otherTower;
-	for (int i = 0; i < 3; i++)
+	// mark all palindromes of length two
+	//for (int i = 0; i < isAnagram.size() - 1; i++)
+	//{
+	//	if (s[i] == s[i + 1])
+	//	{
+	//		isAnagram[i][i + 1] = true;
+	//		if (curMaxLength != 2)
+	//		{
+	//			curMaxLength = 2;
+	//			currLongestPalindrome = s.substr(i, 2);
+	//		}
+	//	}
+	//}
+	
+	// palindromes of length three and more
+	for (int i = 3; i <= isAnagram.size(); i++)
 	{
-		if (i != src && i != dest)
-			otherTower = i;
+		for (int k = 0; k < isAnagram.size() - (i-1); k++)
+		{
+			if (s[k] == s[k + i - 1] && isAnagram[k + 1][k + i - 2])
+			{
+				isAnagram[k][k + i - 1] = true;
+				if (i > curMaxLength)
+				{
+					curMaxLength = i;
+					currLongestPalindrome = s.substr(k, i);
+				}
+			}
+		}
 	}
-
-	solveTowers(towers, size - 1, src, otherTower);
-	solveTowers(towers, 1, src, dest);
-	solveTowers(towers, size - 1, otherTower, dest);
-
-	return;
-}
-
-vector<stack<int>> towerOfHanoi(int n)
-{
-	vector<stack<int>> towers(3);
-	for (int i = n; i > 0; i--)
-	{
-		towers[0].push(i);
-	}
-
-	solveTowers(towers, n, 0, 2);
-
-	return towers;
+	return currLongestPalindrome;
 }
