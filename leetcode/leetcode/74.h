@@ -24,7 +24,7 @@ Consider the following matrix:
   [10, 11, 16, 20],
   [23, 30, 34, 50]
 ]
-Given target = 3, return true.
+Given target = 3, return true
 */
 
 /*
