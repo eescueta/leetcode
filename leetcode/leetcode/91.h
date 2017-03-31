@@ -45,9 +45,31 @@ The number of ways decoding "12" is 2.
 "23732"
 */
 
-map<string, int> decodeArchive;
 
 int numDecodings(string s) {
+	if (s == "" || s[0] == '0') return 0;
+
+	vector<int> answers(s.length() + 1);
+	answers.back() = 1;
+
+	if (s.back() != '0')
+		answers[answers.size() - 2] = 1;
+
+	for (int i = s.size() - 2; i >= 0; i--)
+	{
+		if (s[i] != '0')
+			answers[i] += answers[i + 1];
+
+		if (s[i] == '1' || (s[i] == '2' && s[i + 1] <= '6'))
+			answers[i] += answers[i + 2];
+	}
+
+	return answers[0];
+}
+
+map<string, int> decodeArchive;
+
+int numDecodingsOld(string s) {
 	if (s == "") return 0;
 
 	int res = 0;
@@ -61,7 +83,7 @@ int numDecodings(string s) {
 		return decodeArchive[s];
 	}
 
-	res += numDecodings(s.substr(1));
+	res += numDecodingsOld(s.substr(1));
 
 	char second = s[1];
 	if ((first == '1') || (first == '2' && second >= '0' && second <= '6'))
