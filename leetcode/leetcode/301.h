@@ -33,7 +33,7 @@ Examples:
 "((()())()"
 */
 
-// forgot pair the first time
+// forgot pair parameter the first time
 void removeHelper(int pair, int remove_left, int remove_right, int curr_index, unordered_set<string>& results, const string& s, string curr_result)
 {
 	// if pair is negative at any time, end the recursive calls

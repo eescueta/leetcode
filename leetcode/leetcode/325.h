@@ -64,7 +64,7 @@ int maxSubArrayLen(vector<int>& nums, int k) {
 		{
 			currMax = i + 1;
 		}
-		else if(sumToIndex.find(currSum - k) != sumToIndex.end())
+		else if (sumToIndex.find(currSum - k) != sumToIndex.end())
 		{
 			currMax = max(currMax, i - sumToIndex[currSum - k] + 1);
 		}
