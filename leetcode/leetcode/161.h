@@ -10,55 +10,56 @@
 using namespace std;
 
 /*
-Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.
-
-For example:
-Given the below binary tree and sum = 22,
-5
-/ \
-4   8
-/   / \
-11  13  4
-/  \      \
-7    2      1
-return true, as there exist a root-to-leaf path 5->4->11->2 which sum is 22.
-
-Subscribe to see which companies asked this question
+Given two strings S and T, determine if they are both one edit distance apart.
 */
 
 /*
-[]
-1
-[5, 4, 8, 11, null, 13, 4, 7, 2, null, 1]
-22
-[5, 4, 8, 11, null, 13, 4, 7, 2, null, 1, null, null, null, null, -1]
-21
-[5, 4, 8, 11, null, 13, 4, 7, 2, null, 1, null, null, null, null, 4]
-21
-[1,2]
-1
+""
+""
+"sad"
+"sa"
+"sad"
+"saf"
+"sa"
+"daf"
+"teacher"
+"detacher"
+"teacher"
+"etacher"
 */
 
-bool hasPathSumHelper(TreeNode* currentNode, int sum, int cumulativeSum)
-{
-	if (currentNode->val + cumulativeSum == sum && currentNode->left == NULL && currentNode->right == NULL)
-		return true;
+bool isOneEditDistance(string s, string t) {
+	if (s == t) return false;
+	if (s.length() < t.length()) swap(s, t);
+	if (s.length() - t.length() > 1) return false;
 
-	int newCumulativeSum = currentNode->val + cumulativeSum;
+	if (s.length() == t.length())
+	{
+		int difference = false;
+		for (int i = 0; i < s.length(); i++)
+		{
+			if (s[i] != t[i])
+			{
+				if (!difference)
+					difference = true;
+				else
+					return false;
+			}
+		}
 
-	if (currentNode->left == NULL && currentNode->right == NULL)
+		return difference;
+	}
+	else
+	{
+
+		string left = "";
+		for (int i = 0; i < s.length(); i++)
+		{
+			string right = s.substr(i+1);
+			if (left + right == t) return true;
+			left += s[i];
+		}
 		return false;
-	else if (currentNode->left == NULL)
-		return hasPathSumHelper(currentNode->right, sum, newCumulativeSum);
-	else if (currentNode->right == NULL)
-		return hasPathSumHelper(currentNode->left, sum, newCumulativeSum);
-	else 
-		return hasPathSumHelper(currentNode->left, sum, newCumulativeSum) || hasPathSumHelper(currentNode->right, sum, newCumulativeSum);
-}
-
-bool hasPathSum(TreeNode* root, int sum) {
-	if (root == NULL)
-		return false;
-
-	return hasPathSumHelper(root, sum, 0);
+	}
+	return false;
 }
