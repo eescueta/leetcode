@@ -52,7 +52,7 @@ bool doesContain(vector<int> subCount, vector<int>tCount)
 	return true;
 }
 
-string minWindow(string s, string t) {
+string minWindowOld(string s, string t) {
 	if (t == "") return s;
 	if (s == "") return "";
 
