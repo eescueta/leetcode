@@ -30,8 +30,9 @@ Hide Tags
 */
 
 /*
-["WordDictionary","addWord","addWord","addWord","search","search","search","search"]
-[[],["bad"],["dad"],["mad"],["pad"],["bad"],[".ad"],["b.."]]
+[[1,1],2,[1,1]]
+[1,[4,[6]]]
+[[]]
 */
 
 
@@ -61,58 +62,37 @@ class NestedIterator {
 public:
 
 
-	stack<vector<NestedInteger>> elementStack;
-	stack<int> indexStack;
+	stack<NestedInteger> intStack;
 
 	NestedIterator(vector<NestedInteger> &nestedList) {
-
-
-		elementStack.push(nestedList);
-
-		NestedInteger currElement = nestedList[0];
-		indexStack.push(0);
-
-
-		while (!currElement.isInteger())
+		for (int i = nestedList.size()-1; i >= 0; i--)
 		{
-			elementStack.push(currElement.getList());
-			indexStack.push(0);
-			currElement = elementStack.top()[0];
+			intStack.push(nestedList[i]);
 		}
 	}
 
 	int next() {
-		vector<NestedInteger> currArr = elementStack.top();
-		int currIndex = indexStack.top();
-
-		int retVal = currArr[indexStack.top()].getInteger();
-		cout << "test" << endl;
-		indexStack.top()++;
-
-		while (indexStack.top() >= currArr.size())
-		{
-			elementStack.pop();
-			if (elementStack.empty()) return retVal;
-			currArr = elementStack.top();
-			indexStack.pop();
-			currIndex = indexStack.top();
-			indexStack.top()++;
-		}
-
-		NestedInteger currElem = currArr[indexStack.top()];
-
-		while (!currElem.isInteger())
-		{
-			elementStack.push(currElem.getList());
-			indexStack.push(0);
-			currElem = elementStack.top()[0];
-		}
-
-		cout << retVal << endl;
-		return retVal;
+		NestedInteger retVal = intStack.top();
+		intStack.pop();
+		return retVal.getInteger();
 	}
 
 	bool hasNext() {
-		return elementStack.size() > 0;
+
+		while (intStack.size() > 0)
+		{
+			if (intStack.top().isInteger())
+				return true;
+
+			vector<NestedInteger> nextLevel = intStack.top().getList();
+			intStack.pop();
+
+			for (int i = nextLevel.size() - 1; i >= 0; i--)
+			{
+				intStack.push(nextLevel[i]);
+			}
+		}
+
+		return false;
 	}
 };
