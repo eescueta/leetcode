@@ -38,9 +38,40 @@ Return true because "leetcode" can be segmented as "leet code".
 []
 "abc"
 []
+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaab"
+["a","aa","aaa","aaaa","aaaaa","aaaaaa","aaaaaaa","aaaaaaaa","aaaaaaaaa","aaaaaaaaaa"]
 */
 
-bool wordBreak(string s, unordered_set<string>& wordDict) {
+bool wordBreakHelper(string s, map<string, bool>& wordArchive)
+{
+	if (wordArchive[s])
+		return true;
+
+	for (int i = s.length() - 1; i >= 0; i--)
+	{
+		string right = s.substr(i);
+		string left = s.substr(0, i);
+
+		if (wordArchive[left] && wordBreakHelper(right, wordArchive))
+		{
+			wordArchive[s] = true;
+			return true;
+		}
+	}
+
+	return false;
+}
+
+bool wordBreak(string s, vector<string>& wordDict) {
+	map<string, bool> wordArchive;
+	for (int i = 0; i < wordDict.size(); i++)
+		wordArchive[wordDict[i]] = true;
+
+	return wordBreakHelper(s, wordArchive);
+}
+
+
+bool wordBreakOld(string s, unordered_set<string>& wordDict) {
 	if (s == "")
 		return true;
 
